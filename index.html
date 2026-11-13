@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Explore a hybrid closed-loop insulin delivery system in interactive 3D.">
+<title>In the Loop | Interactive 3D exhibit</title>
+<link rel="stylesheet" href="style.css">
+<script defer src="vendor/three.min.js"></script>
+<script defer src="exhibit.js"></script>
+</head>
+<body>
+<header class="masthead"><a href="./" class="brand"><span aria-hidden="true">◎</span> IN THE LOOP</a><span>BIOMEDICAL EXHIBIT</span></header>
+<main>
+<section class="intro"><p class="eyebrow">INTERACTIVE 3D EXHIBIT</p><h1>Life in the <em>loop.</em></h1><p>Explore how a glucose sensor and an insulin pump work together throughout a college student’s day with type 1 diabetes.</p></section>
+<nav class="tabs" aria-label="Explore a model">
+<button data-scene="campus" aria-pressed="true">Campus life</button><button data-scene="pump" aria-pressed="false">Insulin pump</button><button data-scene="cgm" aria-pressed="false">Glucose monitor</button>
+</nav>
+<section class="exhibit" aria-label="Interactive model and explanation">
+<div class="viewport" id="viewport">
+<div class="stage-label"><span></span><span id="stageTitle">Campus life</span></div>
+<div class="view-tools"><button id="zoomIn" aria-label="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out">−</button><button id="reset" aria-label="Reset camera">↺</button></div>
+<p class="view-hint">Drag to rotate · Scroll or pinch to zoom</p>
+<p id="renderError" hidden>3D viewing requires a browser with WebGL enabled.</p>
+</div>
+<aside class="inspector">
+<p class="eyebrow" id="sectionType"></p><h2 id="sceneTitle"></h2><p id="sceneDescription"></p>
+<div id="actions" class="actions"></div>
+<div id="partList" class="part-list"></div>
+<div class="detail" aria-live="polite"><h3 id="detailTitle"></h3><p id="detailText"></p></div>
+</aside>
+</section>
+<section class="flow-section" aria-labelledby="flowTitle">
+<div><p class="eyebrow">THE FEEDBACK LOOP</p><h2 id="flowTitle">From sensing to delivery</h2></div>
+<ol class="flow">
+<li><span>01</span><h3>Sense</h3><p>The CGM estimates glucose in the fluid beneath the skin and sends readings wirelessly.</p></li>
+<li><span>02</span><h3>Predict</h3><p>Control-IQ in the pump uses CGM data to predict where glucose is heading and adjust insulin delivery.</p></li>
+<li><span>03</span><h3>Deliver</h3><p>The pump sends insulin from the cartridge through tubing and a tiny cannula under the skin.</p></li>
+</ol>
+<p class="hybrid">The loop repeats as the CGM collects new readings. It’s hybrid because the student still manages tasks such as giving a meal bolus.</p>
+</section>
+<footer><p>Educational model. Internal layouts and device placement are illustrative. Models are enlarged in the campus scene.</p><div><a href="https://www.tandemdiabetes.com/docs/default-source/user-guide/user-guide-tandem-mobi-control-iq-aw-1012691.pdf">Tandem Mobi user guide ↗</a><a href="https://www.dexcom.com/en-GB/faqs/dexcom-components?ipc=US">Dexcom G6 components ↗</a></div></footer>
+</main>
+</body>
+</html>
